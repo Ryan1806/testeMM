@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+
+  body{
+    background-color: purple;
+  }
+
+
+  .container2 > h1{
+    color: white;
+    text-align: center;
+    margin-right: 100px;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .button {
+    color: white;
+    margin-bottom: 500px;
+    border-radius: 10px;
+    padding: 20px 40px;
+    background-color:black;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 2s ease-in-out;
+  }
+
+  .button#yesButton {
+    padding: 20px 40px;
+    background-color: black;
+    margin-right: 300px;
+    cursor: pointer;
+    position: absolute;
+    top:45px;
+    left: 400px;
+    transition: transform 0.3s ease-in-out;
+  }
+</style>
+</head>
+<body>
+
+  <div class="container2">
+      <h1>Quer namorar comigo?</h1>
+  </div>
+
+  <div class="container">
+    <a href="pag2.html"><button class="button" id="yesButton">Sim</button></a>
+    <button class="button" id="noButton">Não</button>
+  </div>
+
+  <script>
+    var noButton = document.getElementById("noButton");
+    var container = document.querySelector(".container");
+
+    noButton.addEventListener("mouseover", function() {
+      var buttonWidth = this.offsetWidth;
+      var buttonHeight = this.offsetHeight;
+      var containerWidth = container.offsetWidth;
+      var containerHeight = container.offsetHeight;
+      var maxX = containerWidth - buttonWidth;
+      var maxY = containerHeight - buttonHeight;
+      var x = Math.random() * maxX;
+      var y = Math.random() * maxY;
+      this.style.left = x + "px";
+      this.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
